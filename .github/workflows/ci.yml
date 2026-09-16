@@ -84,7 +84,7 @@ jobs:
     permissions:
       contents: write
     environment:
-      name: github-pages
+      name: production
       url: https://valjavi.github.io/delivery-pipelines-react-poc/
     steps:
       - uses: actions/checkout@v4
