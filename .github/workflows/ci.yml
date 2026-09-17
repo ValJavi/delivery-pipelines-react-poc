@@ -56,7 +56,7 @@ jobs:
     steps:
       - name: Check develop secret
         env:
-          DEVELOP_API_KEY: ${{ secrets.DEVELOP_API_KEY }}
+          DEVELOP_API_KEY: ${{ secrets.DEVELP_API_KEY }}
         run: |
           if [ -z "$DEVELOP_API_KEY" ]; then
             echo "::error::DEVELOP_API_KEY no está configurado para el ambiente develop"
