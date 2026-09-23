@@ -321,7 +321,7 @@ export default defineConfig({
       pages: write
       id-token: write
     environment:
-      name: github-pages
+      name: production
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
@@ -347,8 +347,10 @@ Lo nuevo:
   producción.
 - `permissions: { pages: write, id-token: write }` — el token que usa el job necesita estos
   permisos para poder publicar en Pages.
-- `environment: { name: github-pages, url: ... }` — asocia la corrida a un "ambiente" de
-  GitHub, lo que te deja ver la URL publicada directamente desde la corrida.
+- `environment: { name: production, url: ... }` — asocia la corrida a un "ambiente" de
+  GitHub llamado `production` (el nombre es arbitrario; lo elegimos así porque describe su
+  rol, no el mecanismo de publicación), lo que te deja ver la URL publicada directamente
+  desde la corrida.
 - `actions/configure-pages`, `actions/upload-pages-artifact`, `actions/deploy-pages` — el
   trío de acciones oficiales de GitHub para publicar en Pages usando Actions (no el método
   viejo de una rama `gh-pages`).
@@ -433,7 +435,7 @@ jobs:
       pages: write
       id-token: write
     environment:
-      name: github-pages
+      name: production
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
