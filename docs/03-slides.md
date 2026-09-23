@@ -141,7 +141,7 @@ jobs:
     needs: build
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     permissions: { pages: write, id-token: write }
-    environment: { name: github-pages, url: ${{ steps.deployment.outputs.page_url }} }
+    environment: { name: production, url: ${{ steps.deployment.outputs.page_url }} }
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
